@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html dir="ltr" lang="en">
+<html dir="ltr" lang="pt-br">
 	<head>
 	    <title>{{ page.title }} - {{ site.name }}</title>
 	    {% include head.html %}
@@ -12,7 +12,6 @@
 	           	{{ content }}
 	        </div>
 	    </main>
-        {% include subscribeForm.html %}
         {% include footer.html %}
 	</body>
 </html>

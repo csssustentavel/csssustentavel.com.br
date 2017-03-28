@@ -2,7 +2,7 @@
 layout: chapters
 id: chapters
 permalink: /chapters/
-title: "Chapters"
+title: "Capítulos"
 ---
 
 # Chapters

@@ -1,35 +1,35 @@
 ---
 layout: chapter
-title: Introduction
-section: Preface
-permalink: /chapters/introduction/
-description: An introduction to MaintainableCSS, an approach to writing modular, scalable and of course maintainable CSS.
+title: Introdução
+section: Prefácio
+permalink: /capitulos/introducao/
+description: Uma introdução ao CSSSustentável, uma abordagem para escrever CSS modular, escalável e, claro, sustentável.
 ---
 
-MaintainableCSS is an approach to writing modular, scalable and maintainable CSS. Not only does this guide explain *how* to do this, but more importantly it explains *why*.
+CSS Sustentável é uma abordagem para escrever o CSS de uma forma sustentável, escalável e modular. Esse guia não apenas vai explicar *como* fazer, também vai explicar *porquê* fazer.
 
-## There's nothing to download
+## Não é necessário download
 
-This is not a library or framework. It's a set of principles, guides and conventions to help you write CSS for small or large-scale websites.
+Isso não é uma biblioteca ou framework. É uma série de princípios, guias e convenções que vão te ajudar a escrever CSS para sites de pequena ou grande escala.
 
-## What does maintainable mean?
+## O que quer dizer sustentável?
 
-Maintainable CSS can be defined as being able to make styling changes, without worrying about accidentally causing problems elsewhere.
+CSS Sustentável pode ser definido como um CSS que pode sofrer mudanças sem grande impacto na estrutura geral do estilo.
 
-## What does scalable mean?
+## O que quer dizer escalável?
 
-Scalable CSS means that as CSS increases in size, it's still easy to maintain. If you've ever inherited a large CSS codebase, and been afraid to make changes, you'll sympathise with this.
+Significa que mesmo aumentando de tamanho, o CSS continua sendo de fácil manutenção. Se algum dia você já pegou um código legado grande, e ficou com medo de mexer por medo das consequências, você vai simpatizar com esse guia.
 
-## What does modular mean?
+## O que quer dizer modular?
 
-A module is a distinct, independent unit that can be combined with other modules to form a more complex structure. In a living room, we can consider the TV, the sofa and the wall art to be modules, all coming together to create a room.
+Um módulo é uma unidade distinta e independente, que pode ser combinada com outros módulos para formar uma estrutura mais complexa. Em uma sala de estar, podemos considerar a TV, o sofá e o quadro na parede como sendo módulos, todos se unindo para compor a sala de estar.
 
-If we take one of the units away, the others still work. We don't need the TV to be able to sit on the sofa etc. In a website the header, registration form, shopping basket, article, product list, navigation and homepage promo can all be considered to be modules.
+Se tirarmos algum deles da sala, ainda é uma sala: não precisamos da TV pra sentar no sofá e relaxar etc. O menu de um site, o formulário de cadastro, carrinho de compras, um artigo, uma lista de produtos, a navegação e a promoção da homepage podem ser chamados de módulos.
 
-## Is this for you?
+## Isso é pra você?
 
-If you've ever experienced pain when writing or maintaining CSS, then you'll find useful information in this book. And if you work in a team, this book can serve as documentation for you and your team.
+Bom, se você algum dia já experimentou dores agudas escrevendo ou fazendo manutenção de CSS, é possível que ache informações úteis nesse livro. E se você trabalha em equipe, esse livro pode servir como documentação pra você e sua equipe.
 
-## Is this hard to learn?
+## Vai ser difícil?
 
-No. You can read this in under 20 minutes which includes the rationale behind the approach. Implementing it takes less than a minute.
+Não. A leitura demora menos de 20 minutos, e inclui a razão por trás dessa abordagem. A implementação demora menos de um minuto.
