@@ -1,167 +1,165 @@
 ---
 layout: chapter
-title: Semantics
-section: Background
-permalink: /chapters/semantics/
-description: Why naming something based on what it is, instead of how it looks or behaves is the foundation of well architected and maintainable CSS.
+title: Semântica
+section: Visão Geral
+permalink: /capitulos/semantica/
+description: Porque nomear algo baseado no que ele é, ao invés de como é sua aparência e como é seu comportamento é a base de um CSS bem arquiteturado e sustentável.
 ---
 
-Semantic HTML isn't only about the elements we use. It's quite obvious that we should use `<a>` for links, `<table>` for tabular data and `<p>` for paragraphs etc. What's less obvious is the names we use for classes.
+Semântica não diz respeito apenas aos elementos do HTML. É óbvio que devemos usar `<a>` para links, `<table>` para tabelas, `<p>` para parágrafos e assim em diante. O que não é tão óbvio: os nomes que usamos para classes.
 
-As Phil Karton says, *there are only two hard things in Computer Science: cache invalidation and **naming things***. So spending an entire chapter talking about it seems like an appropriate thing to do.
+Como Phil Karton diz, *apenas duas coisas são difíceis em Ciência da Computação: invalidação do cache e **nomear coisas***. Então um capítulo dedicado a isso parece uma coisa razoável.
 
-Naming is quite frankly the most important aspect of writing maintainable CSS. There are two main approaches: the semantic approach and the non-semantic approach. Let's discuss what they are.
+Nomear é o que há de mais importante na hora de escrever um CSS Sustentável. Existem dois jeitos de escrever CSS: semanticamente, e não semanticamente. Vamos ver como são eles.
 
-## Semantic vs non-semantic
+## Semântico vs Não-semântico
 
-Here are some non-semantic classes:
+Aqui estão umas classes não-semânticas:
 
-	<div class="red pull-left pb3">
+	<div class="vermelho puxar-esquerda pb3">
 	<div class="grid row">
 	<div class="col-xs-4">
 
-Non-semantic classes don't convey *what* an element represents. At best, they give us an idea of what an element *looks* like. Atomic, visual, behavioural and utility classes are all forms of non-semantic classes.
+Classes não-semânticas não passam a ideia do *quê* o elemento representa. No mais eles nos dão uma ideia de como ele se *parece*. Classes atômicas, visuais, comportamentais e utilitárias não são semânticas.
 
-Here are some semantic classes:
+Agora, umas classes semânticas:
 
-	<div class="basket">
-	<div class="product">
-	<div class="searchResults">
+	<div class="cesta">
+	<div class="produto">
+	<div class="resultadosBusca">
 
-Semantic classes don't convey their styles, but that's okay. That's what CSS is for. Semantic classes mean something to HTML, CSS, Javascript and automated functional tests.
+As classes semânticas não passam a ideia de como se parecem, mas tudo bem. É pra isso que serve o CSS. Classes semânticas conversam com o HTML, CSS, Javascript e testes automatizados.
 
-There are many reasons why semantic classes are advantageous:
+Existem muitos benefícios em usar classes semânticas:
 
-## 1. Because they are readable
+## 1. São de fácil leitura
 
-Here's a real snippet of HTML using atomic classes:
+Aqui está um snippet real de classes atômicas:
 
-	<div class="pb3 pb4-ns pt4 pt5-ns mt4 black-70 fl-l w-50-l">
-	  <h1 class="f4 fw6 f1-ns lh-title measure mt0">Heading</h1>
-	  <p class="f5 f4-ns fw4 b measure dib-m lh-copy">Tagline</p>
+	<div class=”pb3 pb4-ns pt4 pt5-ns mt4 preto-70 fl-l w-50-1”>
+		<h1 class=”f4 fw6 f1-ns lh-titulo medida mt0”>Título</h1>
+	<p class=”f5 f4-ns fw4 b medida dib-m lh-copy”>Parágrafo</p>
 	</div>
 
-Notes:
+Notas:
 
-- Reading words is much easier than reading abbreviations.
-- Abbreviations have to be broken down and mapped cognitively, assuming we know what they mean in the first place.
-- It's also very hard to read the large cluster of class names. That's why CSS has syntax.
-- We need to wade through many classes to work out what's happening; which classes override which; and which apply at certain break points etc.
-- These classes are ambiguous. For example, does `black-70` refer to the colour or the background? If we need the inspector to find out, this implies the class names are not readable.
-- The content is obfuscated by the surrounding HTML.
+- Nós precisamos mapear mentalmente as abreviações, partindo do princípio que sabemos o que elas significam.
+- Precisamos passar por muitas classes para entender o que está acontecendo; quais classes sobrescrevem as outras, quais são aplicadas em determinados break points etc.
+- Essas classes são ambíguas. Por exemplo, `preto-70` significa a cor do fundo ou a cor da fonte? Se precisamos inspecionar para saber isso, confirmamos que os nomes das classes não são de fácil leitura.
+- O conteúdo é facilmente ofuscado pelo tanto de HTML na tela.
 
-Here's the same thing using semantic classes:
+Aqui temos o mesmo com classes semânticas:
 
-	<div class="hero">
-	  <h1 class="hero-title">Heading</h1>
-	  <p class="hero-tagline">Tagline</p>
+	<div class="artigo">
+		<h1 class="artigo-titulo">Título</h1>
+		<p class="artigo-paragrafo">Parágrafo</p>
 	</div>
 
-Notes:
+Notas:
 
-- These classes are easy to read. No mental mapping is required.
-- The content is no longer obfuscated.
-- We know where the module begins and ends.
-- The HTML is half the size.
-- It's easy to read the CSS (in the inspector or in the file) because it has dedicated language constructs that exist for this purpose. 
+- Essas classes são fáceis de ler. Não é necessário mapear nada.
+- O conteúdo aparece com mais clareza.
+- Conseguimos ver onde o módulo começa e onde ele termina.
+- A inspeção dos elementos se torna muito mais fácil.
+- O HTML fica com metade do tamanho.
 
-## 2. Because it's easier to build responsive sites
+## 2. É melhor para construir sites responsivos
 
-Imagine coding a two-column responsive grid whereby:
+Imagine estar codificando um grid responsivo de duas colunas, onde:
 
-* each column has `20px` and `50px` padding on small and large screens;
-* each column has `2em` and `3em` font-size on small and large screens; and
-* the columns stack on small screens. Note that *column* is now a misleading class name.
+* cada coluna tem `20px` e `50px` de padding em telas pequenas e grandes;
+* cada coluna tem `2em` e `3em` de font-size em telas pequenas e grande; e
+* as colunas são empilhadas em telas pequenas. Note que o nome *coluna* para a classe se torna enganoso.
 
-Here's how this is typically done using visual and utility classes:
+Geralmente, é feito assim usando classes utilitárias e visuais:
 
-	<div class="grid clearfix">
-	  <div class="col pd20 pd50 fs2 fs3">Column 1</div>
-	  <div class="col pd20 pd50 fs2 fs3">Column 2</div>
+	<div class=”grid clearfix”>
+		<div class=”col pd20 pd50 fs2 fs3”>Coluna 1</div>
+		<div class=”col pd20 pd50 fs2 fs3”>Coluna 2</div>
 	</div>
 
-Notes:
+Notas:
 
-- There are 7 classes, some of which override each other.
-- To make the columns actually responsive we would need a `fs3large` class etc. This means using a naming convention that recreates language constructs found in CSS.
-- At certain break points, the classes are misleading and redundant. For example `.clearfix` doesn't clear on small screens.
+- Temos 7 classes, e algumas se sobrepõem.
+- Para fazer as colunas verdadeiramente responsivas, precisaríamos de uma classe `fs3grande` etc. Isso significa que estaríamos usando uma convenção de nomes que recria as linguagens encontradas no CSS.
+- Em certos break points, as classes se tornam redundantes e enganosas. Por exemplo `.clearfix` não faz nada em telas menores.
 
-We've barely evaluated this simple component and yet there is significant pain already.
+Mal começamos a avaliar este componente simples e já temos uma dor significativa.
 
-Here's the same thing using semantic classes:
+Aqui temos o mesmo usando classes semânticas:
 
-	<div class="thing">
-	  <div class="thing-thingA"></div>
-	  <div class="thing-thingB"></div>
+	<div class=”coisa”>
+		<div class=”coisa-coisa1”></div>
+		<div class=”coisa-coisa2”></div>
 	</div>
 
-Notes:
+Notas:
 
-- These classes are encapsulated to the module's design and content.
-- It's easy to style elements without having to write a multitude of classes and changing the HTML again.
-- These classes are meaningful in small and big screens.
-- We can use a media query, to clear elements only when needed.
+- As classes estão encapsuladas no conteúdo e estilo do módulo.
+- É mais fácil estilizar elementos sem ter que escrever muitas classes e sem ter que mudar o HTML tantas vezes.
+- As classes fazem sentido em telas pequenas e grandes.
+Podemos usar media queries para remover elementos apenas quando necessário.
 
-> Question: How valuable is a codified responsive grid system? A layout should adapt to the content, not the other way around.
+> Question: Pergunta: O quão valioso é um sistema de grids responsivo? O layout deveria se adaptar ao conteúdo, e não o contrário.
 
-## 3. Because they are easier to find
+## 3. São mais fáceis de achar
 
-Searching for HTML with a non-semantic class yields many results. As semantic classes are unique, a search yields only one result, making it easy to track down the HTML.
+Buscar por HTML com classes não-semânticas gera muitos resultados. Como as classes semânticas são únicas, buscar por elas retornam apenas um resultado, facilitando a manutenção do HTML.
 
-## 4. Because they eliminate the risk of regression
+## 4. Elas eliminam o risco de regressão
 
-Updating a visual class could cause regression across a multitude of elements. Updating a semantic class only applies to the module in question, eliminating regression altogether.
+Atualizar uma classe visual poderia causar regressão através de muitos elementos. Atualizando uma classe semântica vai mudar apenas o módulo envolvido, eliminando a chance de regressão.
 
-## 5. Because visual classes aren't worth it
+## 5. Classes visuais não valem à pena
 
-In some respects we may as well inline styles. This is more explicit and reduces the CSS footprint to zero. Inline CSS is a problem though, because we can't use media queries for example. And placing CSS in HTML mixes concerns and removes the ability to cache it.
+Em alguns casos podemos até escrever CSS inline. Isso é mais explícito e reduz os rastros do CSS em zero. Entretanto, é problemático pois não conseguimos usar media queries, por exemplo. E colocar CSS com HTML mistura muita coisa e perde-se a habilidade de armazenamento em cache.
 
-> Question: Isn't `.red` the exact same abstraction that CSS already gives us for free with `color: red`?
+> Pergunta: A classe `.vermelho` não é a mesma abstração que o CSS já nos oferece de graça com `color: red`?
 
-## 6. Because they provide hooks for automated tests
+## 6. Elas oferecem ganchos para testes automatizados
 
-Automated functional tests work by searching for, and interacting with elements. This may include:
+Testes funcionais automatizados funcionam pesquisando por, e interagindo com elementos. Sendo eles:
 
-1. clicking a link;
-2. finding a text box;
-3. typing in text;
-4. submitting a form; and then
-5. verifying some criteria.
+1. clicar em um link;
+2. achar um texto em uma caixa;
+3. escrever um texto;
+4. enviar um formulário; e também
+6. verificar dados.
 
-We can't use non-semantic classes to target specific elements. And adding hooks specifically for tests is wasteful as the user has to download this stuff.
+Não podemos usar as classes não-semânticas para atingir alvos específicos. E adicionar ganchos apenas para testes é mais perda de tempo do que você ter que baixar esse livro.
 
-## 7. Because they provide hooks for Javascript
+## 7. Elas oferecem ganchos para Javascript também
 
-We can't use non-semantic classes to target specific elements in order to enhance them with Javascript.
+Não podemos usar classes não-semânticas para atingir elementos específicos, para que possamos melhorá-lo com Javascript.
 
-## 8. Because they don't need maintaining
+## 8. Elas não precisam de manutenção
 
-If we name a thing based on what it is, we won't have to update the HTML again e.g. a heading is always a heading, no matter what it *looks* like.
+Se nomeamos a classe baseado no que ela é, não precisaremos atualizar o HTML novamente. Por exemplo, um cabeçalho é um cabeçalho, não importa como ele se *parece*.
 
-With visual classes, both the HTML and the CSS need updating (assuming there aren't any selectors available for use).
+Com classes visuais, tanto o HTML quanto o CSS precisarão de atualizações (assumindo que não há seletores disponíveis para uso).
 
-## 9. Because they are easier to debug
+## 9. São mais fáceis de debugar
 
-Inspecting an element with a multitude of atomic classes, means wading through many selectors. With a semantic class, there is only one, making it far easier to work with.
+Inspecionar um elemento com muitas classes atômicas significa patinar através de muitos seletores. Com uma classe semântica, só existe uma, facilitando na busca.
 
-## 10. Because the standards recommend it
+## 10. Porque é o padrão
 
-On using the class attribute, HTML5 specs say in 3.2.5.7:
+Sobre usar o atributo classe, as especificações do HTML em 3.2.5.7 dizem o seguinte:
 
-> "[...] authors are encouraged to use values that describe the nature of the content, rather than values that describe the desired presentation of the content."
+> "[...] autores são encorajados a usar os valores que descreva a natureza do conteúdo, ao contrário de escrever os valores que descrevem a apresentação de como o conteúdo deveria ser apresentado."
 
-## 11. Because styling state is easier
+## 11. É mais fácil ao estilizar os estados
 
-Consider the following HTML:
+Considere o seguinte HTML:
 
-	<a class="padding-left-20 red" href="#"></a>
+	<a class=”padding-esquerda-20 vermelho” href=”#”></a>
 
-Changing the padding and colour on hover is a difficult task. It's better to avoid having to fix self-induced problems like this.
+Mudar o padding e o colour do elemento no hover seria problemático. É melhor para evitar ter que consertar problemas auto-induzidos, como esse.
 
-## 12. Because they produce a small HTML footprint
+## 12. Eles deixam um rastro menor no HTML
 
-As we've seen above, atomic classes bloat HTML. Semantic classes result in smaller HTML. And whilst the CSS may increase in size, it's cacheable.
+Como vimos acima, classes atômicas incham o HTML. Classes semânticas resultam em um HTML menor. E enquanto o CSS aumenta de tamanho, dá pra armazenar no cache.
 
-## Final thought
+## Conclusão
 
-Semantic classes are a corner stone of *MaintainableCSS*. Without them, everything else makes little sense. So name something based on what it is and everything else falls into place.
+Classes semânticas são os pilares do CSS Sustentável. Sem elas, nada faria sentido. Então nomeie o elemento baseado no que ele é que as coisas vão se encaixando.
