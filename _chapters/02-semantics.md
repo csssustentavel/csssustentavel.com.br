@@ -3,7 +3,7 @@ layout: chapter
 title: Semantics
 section: Background
 permalink: /chapters/semantics/
-description: Why naming something based on what it is, instead of how it looks or behaves is a cornerstone of writing well architected and maintainable CSS code.
+description: Why naming something based on what it is, instead of how it looks or behaves is the foundation of well architected and maintainable CSS.
 ---
 
 Semantic HTML isn't only about the elements we use. It's quite obvious that we should use `<a>` for links, `<table>` for tabular data and `<p>` for paragraphs etc. What's less obvious is the names we use for classes.
@@ -43,7 +43,9 @@ Here's a real snippet of HTML using atomic classes:
 
 Notes:
 
-- We need to mentally map these abbreviations, assuming we know what they mean in the first place.
+- Reading words is much easier than reading abbreviations.
+- Abbreviations have to be broken down and mapped cognitively, assuming we know what they mean in the first place.
+- It's also very hard to read the large cluster of class names. That's why CSS has syntax.
 - We need to wade through many classes to work out what's happening; which classes override which; and which apply at certain break points etc.
 - These classes are ambiguous. For example, does `black-70` refer to the colour or the background? If we need the inspector to find out, this implies the class names are not readable.
 - The content is obfuscated by the surrounding HTML.
@@ -60,8 +62,8 @@ Notes:
 - These classes are easy to read. No mental mapping is required.
 - The content is no longer obfuscated.
 - We know where the module begins and ends.
-- We can inspect the element's styles easily.
 - The HTML is half the size.
+- It's easy to read the CSS (in the inspector or in the file) because it has dedicated language constructs that exist for this purpose. 
 
 ## 2. Because it's easier to build responsive sites
 

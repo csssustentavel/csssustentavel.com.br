@@ -99,11 +99,36 @@ a:focus {
 }
 
 /**********************************************************
+* Primary button
+**********************************************************/
+
+.primaryLinkButton {
+	font-size: 0.94em;
+	display: inline-block;
+	text-decoration: none;
+	margin: 0 auto;
+	border-radius: 30px;
+	text-transform: uppercase;
+	padding: 12px 30px;
+	color: #222;
+	border: 2px solid #222;
+	font-weight: bold;
+	letter-spacing: 0.04em;
+	width: 150px;
+	text-align: center;
+	margin: 0 auto;
+}
+
+.primaryLinkButton:hover {
+	color: #fff;
+	background-color: #222;
+}
+
+/**********************************************************
 * Footer
 **********************************************************/
 
 .footer {
-	background-color: #f5f5f5;
 	padding: 20px;
 	overflow: hidden;
 }
@@ -127,7 +152,7 @@ a:focus {
 **********************************************************/
 
 .header {
-	background-color: #fcf6ff;
+	background-color: #fafafa;
 }
 
 .header-inner {
@@ -329,7 +354,7 @@ a.navigation-isActive {
 .content ul code,
 .content li code {
 	font-size: 1.3em;
-	color: #FF851B;
+	color: #ff851b;
 }
 
 .content pre {
@@ -369,31 +394,6 @@ a.navigation-isActive {
 	}
 }
 
-.chapterNavigation a {
-	font-size: 0.94em;
-	display: inline-block;
-	text-decoration: none;
-	margin: 0 auto;
-	border-radius: 30px;
-	text-transform: uppercase;
-	padding: 12px 30px;
-	color: #222;
-	border: 2px solid #222;
-	font-weight: bold;
-	letter-spacing: 0.04em;
-	width: 150px;
-	text-align: center;
-	margin: 0 auto;
-}
-
-a.chapterNavigation-previous:hover,
-a.chapterNavigation-next:hover,
-a.chapterNavigation-previous:active,
-a.chapterNavigation-next:active {
-	color: #fff;
-	background-color: #222;
-}
-
 /**********************************************************
 * Hero
 **********************************************************/
@@ -403,6 +403,7 @@ a.chapterNavigation-next:active {
 	padding-right: 20px;
 	padding-top: 30px;
 	padding-bottom: 50px;
+	text-align: center;
 }
 
 @media(min-width: 37.5em) {
@@ -456,35 +457,12 @@ a.chapterNavigation-next:active {
 	}
 }
 
-.hero-button:link,
-.hero-button:visited {
-	text-transform: uppercase;
-	text-decoration: none;
-	padding: 14px 70px;
-	font-size: 0.94em;
-	border: 3px solid #8E55A9;
-	color: #8E55A9;
-	font-weight: bold;
-	letter-spacing: 0.04em;
-	width: 100px;
-	margin: 0 auto;
-	display: block;
-	text-align: center;
-	border-radius: 30px;
-}
-
-.hero-button:hover {
-	color: #fff;
-	background-color: #8E55A9;
-}
-
-
 /**********************************************************
 * Chapters
 **********************************************************/
 
 .chapters {
-	background-color: #fcf6ff;
+	background-color: #fafafa;
 	padding-top: 40px;
 	padding-bottom: 40px;
 }
@@ -671,10 +649,6 @@ a.chapterNavigation-next:active {
 	font-weight: bold;
 }
 
-.subscribeForm {
-	background-color: #222;
-}
-
 .subscribeForm-inner {
 	margin-right: auto;
 	margin-left: auto;
@@ -685,7 +659,6 @@ a.chapterNavigation-next:active {
 .subscribeForm-heading {
 	font-size: 1.38em;
     line-height: 1.2em;
-    color: #fff;
     margin-bottom: 10px;
 }
 
@@ -697,7 +670,6 @@ a.chapterNavigation-next:active {
 }
 
 .subscribeForm p {
-	color: #fff;
 	font-size: 1.13em;
     line-height: 1.7em;
     margin-bottom: 20px;
@@ -718,7 +690,6 @@ a.chapterNavigation-next:active {
 	margin-bottom: 5px;
 	display: block;
 	font-family: 'PT serif';
-	color: #fff;
 }
 
 @media(min-width: 37.5em) {
@@ -732,7 +703,7 @@ a.chapterNavigation-next:active {
 	padding: 9px 10px;
 	font-size: 1.13em;
 	color: #222;
-	border: 2px solid #f5f5f5;
+	border: 2px solid #222;
 	letter-spacing: -0.01em;
 	margin: 0 auto;
 	-webkit-appearance: none;
@@ -749,23 +720,23 @@ a.chapterNavigation-next:active {
 	}
 }
 
-@media(min-width: 650px) {
+@media(min-width: 36em) {
 	.subscribeForm-email {
 		display: inline-block;
-		max-width: 350px;
+		max-width: 330px;
 		margin-right: 10px;
 	}
 }
 
 .subscribeForm-email:focus {
-	outline: 3px solid #fff;
-	border: 2px solid #fff;
+	outline: 3px solid #222;
+	border: 2px solid #222;
 }
 
 .subscribeForm-button {
 	text-transform: uppercase;
 	text-decoration: none;
-	padding: 14px 17px;
+	padding: 13px 17px;
 	font-size: 0.94em;
 	color: #222;
 	font-weight: bold;
@@ -774,23 +745,23 @@ a.chapterNavigation-next:active {
 	text-align: center;
 	margin: 0 auto;
 	-webkit-appearance: none;
-	border: 3px solid #ff851b;
+	border: 2px solid #222;
 	background-color: transparent;
-	color: #ff851b;
+	color: #222;
 	width: 100%;
 	box-sizing: border-box;
 	font-family: 'Open sans';
 	border-radius: 30px;
 }
 
-@media(min-width: 650px) {
+@media(min-width: 36em) {
 	.subscribeForm-button {
 		display: inline-block;
-		width: 200px;
+		width: 180px;
 	}
 }
 
 .subscribeForm-button:hover {
-	background-color: #ff851b;
-	color: #222;
+	background-color: #222;
+	color: #fff;
 }
