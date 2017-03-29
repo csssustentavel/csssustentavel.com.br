@@ -1,4 +1,4 @@
-name: MaintainableCSS - an approach to writing modular, scalable and maintainable CSS | By Adam Silver
+name: CSS Sustentável - uma abordagem para escrever CSS modular, escalável e sustentável | por Adam Silver
 markdown: kramdown
 url: http://maintainablecss.com
 include: ['_pages']
@@ -6,4 +6,4 @@ collections:
   chapters:
     output: true
     permalink: /:collection/:title/
-description: MaintainableCSS is an approach to writing modular, scalable and of course, maintainable CSS.
+description: CSS Sustentável é uma abordagem para escrever CSS modular, escalável e, claro, sustentável.

@@ -354,7 +354,7 @@ a.navigation-isActive {
 .content ul code,
 .content li code {
 	font-size: 1.3em;
-	color: #ff851b;
+	color: #0A4958;
 }
 
 .content pre {
@@ -362,7 +362,7 @@ a.navigation-isActive {
 	font-size: 1.44em;
 	font-size: 1.2em;
 	color: #222;
-	background-color: #fcf6ff;
+	background-color: #F6E7D2;
 	margin-bottom: 30px;
 	padding: 20px;
 	white-space: pre-wrap;       /* css-3 */
@@ -462,7 +462,7 @@ a.navigation-isActive {
 **********************************************************/
 
 .chapters {
-	background-color: #fafafa;
+	background-color: #01B6AD;
 	padding-top: 40px;
 	padding-bottom: 40px;
 }
@@ -474,9 +474,16 @@ a.navigation-isActive {
 }
 
 .chapters h2 {
+	color: #FFF;
 	font-size: 1.38em;
 	line-height: 1.2em;
 	margin-bottom: 10px;
+}
+
+.chapters a,
+.chapters a:active,
+.chapters a:hover {
+	color: #01B6AD;
 }
 
 @media(min-width: 37.5em) {
