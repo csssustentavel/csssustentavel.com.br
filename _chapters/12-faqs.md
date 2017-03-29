@@ -2,129 +2,130 @@
 layout: chapter
 title: FAQs
 section: Extras
-permalink: /chapters/faqs/
-description: Your questions about MaintainableCSS are answered here.
+permalink: /capitulos/faqs/
+description: Suas questões sobre o CSS Sustentável são respondidas aqui.
 ---
 
-If you can't find an answer, please [raise an issue on Github](https://github.com/adamsilver/maintainablecss.com/issues/new). Thanks!
+Se você não conseguir encontrar a resposta, por favor [publique uma issue no Github](https://github.com/adamsilver/maintainablecss.com/issues/new). Obrigado!
 
-## Can I translate your book?
+## Posso traduzir este livro?
 
-Yes. To do this:
+Sim. Para isso:
 
-1. [Fork the repo](https://github.com/adamsilver/maintainablecss.com/).
-2. Point your (country code) domain to it.
-3. Cite the original and let me know :).
+1. [Faça um fork do repositório](https://github.com/adamsilver/maintainablecss.com/).
+2. Aponte o domínio do seu país para ele.
+3. Cite o original e me avise :).
 
-## When should I use this?
+## Quando eu devo usar isso?
 
-If you like to keep things truly simple, use this approach. It works well if you're building long-lived, bespokely designed, responsive sites that scale and evolve over time.
+Se você gosta de manter as coisas realmente simples, use esta abordagem. Ela funciona bem se você está construindo sites de longa duração, com design responsivo e sob medida que escalam e evoluem com o tempo.
 
-## What if I don't want to use it?
+## E se eu não quiser usar isso?
 
-If you don't like it, feel free not to use it. Or use the bits you do like. If something doesn't work well, let me know and we can work out.
+Se você não gosta, sinta-se livre para não utilizar. Ou usar as partes que você gosta. Se algo não funciona bem, me avise e podemos trabalhar nisso.
 
-## Isn't this the same as [methodology]?
+## Isso é o mesmo que [tal metodologia]?
 
-These guides are the result of building many different types of websites. I've been influenced by many different experiences, requirements and people that I've worked with.
+Estes guias são resultado da construção de diferentes tipos de sites. Eu fui influenciado por diferentes experiências, requisitos e pessoas com as quais eu trabalhei.
 
-No doubt, there is a resemblance to BEM and ECSS. If you're using those happily, stick with them. These guides are here if and when you need them.
+Sem dúvida, há uma semelhança com BEM e ECSS. Se você está usando estas abordagens alegremente, continue com elas. Estes guias estão aqui se e quando você precisar deles.
 
-## Must I give a class name to every element?
+## Devo criar uma classe para cada elemento?
 
-No. You can write `.module p {}` if you want to. And sometimes you may have to, if for example you're using markdown. But beware that if you nest a module which contains a `p` it will inherit the styles and need overriding.
+Não. Você pode escrever `.modulo p {}` se quiser. E algumas vezes você vai precisar fazer isso, se, por exemplo, você está usando markdown. Mas tenha cuidado que, se você está em um módulo que contém um `p`, ele irá herdar os estilos e precisa ser sobrescrito.
 
-## Why must I prefix the module name?
+## Porque eu devo prefixar o nome do módulo?
 
-Good question. Here's the HTML without a prefix:
+Boa pergunta. Aqui está um HTML sem prefixo:
 
-	<div class="basket">
-	  <div class="heading">
+	<div class="carrinho">
+	  <div class="titulo">
 
-And the CSS:
+E o CSS:
 
-	/* module */
-	.basket {}
+	/* módulo */
+	.carrinho {}
 
-	/* heading component of basket module */
-	.basket .heading {}
+/* componente de título para o módulo de carrinho */
+.carrinho .titulo {}
 
-There are two problems:
+Há dois problemas:
 
-1. when viewing HTML, it's hard to differentiate between a module and a component; and
-2. the `.basket .heading` component will inherit styles from the `.heading` module which has unintended side effects.
+1. ao visualizar o HTML, é difícil diferenciar entre um módulo e um componente; e
+2. o componente `.carrinho .titulo` irá herdar os estilos do módulo `.titulo`, o que causa um efeito colateral não intencional.
 
-## Could we chain classes for state?
+## Podemos encadear classes para estado?
 
-We could use a chained selector for state e.g. `.module.isDisabled`. The problem is that this approach has less browser support. We should avoid patterns that unnecessarily exclude users, unless there is a compelling reason to do so.
+Podemos usar um seletor encadeado para um estado, ex.: `.modulo.desabilitado`. O problema é que esta abordagem tem menos suporte de navegadores. Devemos evitar padrões que excluem usuários desnecessariamente, a menos que haja uma razão convincente para fazer isso.
 
-## What about inheritance for headings etc?
+## E quanto à herança para títulos, etc?
 
-Ideally our semantic HTML matches the integrity of the visual design. Meaning that we would hope that `h1`s are identical. In this case we can declare the following CSS:
+Idealmente, nosso HTML semântico combina com a integridade do design visual. O que significa que esperamos que os h1s sejam idênticos. Neste caso, podemos declarar o seguinte CSS:
 
 	h1 {
-      /* etc */
+	  /* etc */
 	}
 
-However, this is rarely the case, in commercial, large-scale websites. In this case we should encapsulate styles to the module in question:
+Porém, este raramente é o caso em sites comerciais de larga escala. Neste caso, podemos encapsular estilos ao módulo em questão:
 
-	.module-heading {
+	.modulo-titulo {
 	  font-size: ...;
 	  color: ...;
 	}
 
-## Where do I put media queries?
+## Onde eu coloco as media queries?
 
-The screen should adapt to the content, not the other way around.
+A tela deve se adaptar ao conteúdo, não o contrário.
 
-This means a module's breakpoints shouldn't be predetermined by *small*, *medium* and *large*. Doing this constrains the design and degrades the user experience.
+Isto significa que o breakpoint de um módulo não deve ser determinado como *pequeno*, *médio* ou *grande*. Fazer isso restringe o design e degrada a experiência do usuário.
 
-Therefore, all styles&mdash;even those that are wrapped in media queries&mdash;should be located next to regular styles:
+Assim, todos os estilos&mdash;mesmo aqueles que estão encapsulados em media queries&mdash;deveriam estar localizados próximos aos estilos regulares:
 
-	.basket {}
+	.carrinho {}
 
 	@media(min-width: 500px) {
-      .basket {}
+	  .carrinho {}
 	}
 
 	@media(min-width: 1000px) {
-	  .basket {}
+	  .carrinho {}
 	}
 
-	.basket-heading {}
+	.carrinho-titulo {}
 
-## Where do I put modifiers and states?
+## Onde eu coloco modificadores e estados?
 
-States and modifiers, similarly to media queries, should be located in close proximity to the element they pertain to:
+Estados e modificadores, de modo similar às media queries, devem estar localizados próximos ao elemento ao qual eles pertencem:
 
-	.basket {}
+	.carrinho {}
 
-	.basket-isHidden {}
+	.carrinho-escondido {}
 
-	.basket-heading {}
+	.carrinho-titulo {}
 
-	.basket-heading--someModifier {}
+	.carrinho-titulo--algumModificador {}
 
-## Should I add comments?
+## Devo adicionar comentários?
 
-If you take an approach whereby multiple modules reside within a single CSS file, it's a good idea to segregate those with a chunky comment:
-
-	/********************************************
-	* Basket
-	********************************************/
-
-	.basket {}
-
-	.basket-heading {}
+Se você usar uma abordagem em que vários módulos residem dentro de um único arquivo CSS, é uma boa ideia separar estes módulos com um comentário mais proeminente:
 
 	/********************************************
-	* Thinger
+	* Carrinho
 	********************************************/
 
-	.thinger {}
+	.carrinho {}
 
-	.thinger-details {}
+	.carrinho-titulo {}
 
-## Can't find an answer here?
+	/********************************************
+	* Coisa
+	********************************************/
 
-Raise an issue on [Github](https://github.com/adamsilver/maintainablecss.com/issues/new) and I will get back to you as soon as I can. Thanks!
+	.coisa {}
+
+	.coisa-detalhes {}
+
+## Não conseguiu encontrar uma resposta aqui?
+
+Crie uma issue no [Github](https://github.com/adamsilver/maintainablecss.com/issues/new) e irei dar um retorno a você o mais breve que eu puder. Obrigado!
+
