@@ -12,14 +12,14 @@ Código bom é fácil de encontrar e código fácil de encontrar é bem organiza
 
 Esta abordagem coloca o CSS em um único diretório:
 
-  /caminho/para/css
-    /vendor
-      algumArquivoDeTerceiros.css
-      outroArquivoDeTerceiros.css
-    /seuApp
-      algo.css
-      global.css
-      carrinho.css
+	/caminho/para/css
+		/vendor
+			algumArquivoDeTerceiros.css
+			outroArquivoDeTerceiros.css
+		/seuApp
+			algo.css
+			global.css
+			carrinho.css
 
 ### Notas
 
@@ -32,26 +32,26 @@ Esta abordagem coloca o CSS em um único diretório:
 
 Esta abordagem coloca os CSS específicos de módulos em seus próprios diretórios:
 
-  /global
-    /css
-      reset.css
-      global.css
-      etc.css
-  /carrinho
-    /controllers
-      ...
-    /templates
-      carrinho.html
-      carrinhoVazio.html
-    /partials
-      cabecalhoCarrino.html
-      resumoCarrinho.html
-    /js
-      ...
-    /css
-      carrinho.css
-  /header
-    ...
+	/global
+		/css
+			reset.css
+			global.css
+			etc.css
+	/carrinho
+		/controllers
+		...
+		/templates
+			carrinho.html
+			carrinhoVazio.html
+		/partials
+			cabecalhoCarrino.html
+			resumoCarrinho.html
+		/js
+			...
+		/css
+			carrinho.css
+	/header
+		...
 
 ### Notas
 
