@@ -1,61 +1,61 @@
 ---
 layout: chapter
-title: Reuse
-section: Background
-permalink: /chapters/reuse/
-description: Learn why avoiding reuse and embracing repetition makes CSS maintenance easier.
+title: Reuso
+section: Fundamentos
+permalink: /capitulos/reuso/
+description: Aprenda porque evitar reuso e abraçar a repetição faz a manutenção do CSS mais fácil.
 ---
 
-As Harry Roberts says, *DRY is often misinterpreted as the necessity to never repeat the exact same thing twice. This is impractical and usually counterproductive, and can lead to forced abstractions, over-thought and over-engineered code.*
+Como diria Harry Roberts, *DRY<sup>1</sup> é mal interpretado como a necessidade de nunca repetir a mesma coisa duas vezes. Isso não é prático e geralmente contraproducente, e pode levar a abstrações forçadas, gasto extra de energia e pensamento.*
+<sup>1</sup> *DRY - Don’t Repeat Yourself (não se repita)*
 
+Essa abstração forçada frequentemente resulta em classes atômicas e visuais. Nós sabemos quão dolorosas elas podem ser pois discutimos isso no capítulo de [Semântica](/capitulos/semantica/). Mixins também podem ser problemáticos, como veremos em breve.
 
-This forced abstraction, over-thought and over-engineered code often results in visual and atomic classes. We know how painful they are because we discussed them thoroughly in [semantics](/chapters/semantics/). Mixins may also be a problem as we'll discuss shortly.
+Enquanto tentamos abstrair o CSS muito cedo, e por vezes em demasia, há momentos em que reutilizar o código faz sentido. A pergunta que precisa ser respondida é, *como poderíamos reutilizar um estilo?*
 
-Whilst we often try to abstract CSS too much too soon, there are obviously going to be times when reuse makes sense. The question must be answered, *how can we reuse a style?*
+## Como podemos reutilizar um estilo?
 
-## How can we reuse a style?
+Se quiséssemos reutilizar um estilo, uma opção seria delimitar os seletores por uma vírgula em um arquivo bem nomeado. Por exemplo, se muitos elementos precisassem de texto vermelho, poderíamos fazer isso:
 
-If we want to reuse a style, one option would be to comma-delimit selectors inside a well-named file. For example, if multiple elements need red text, we could do this:
-
-	.someThing,
-	.anotherThing {
-	  color: red;
+	.algumaCoisa,
+	.outraCoisa {
+		color: red;
 	}
 
-This approach should be used for convenience, not for performance. (If the abstraction only has one rule, we're simply exchanging one line of code for another.)
+Essa abordagem deveria ser usada por conveniência, não por performance. (Se a abstração só tiver uma propriedade, estamos apenas trocando uma linha de código pela outra.)
 
-If a selector deviates from the rules inside the abstraction, it should be removed from the list. Otherwise we could regress the other selectors and potentially experience override issues.
+Se um seletor se desvia das regras de dentro da abstração, ele deveria ser removido da lista. De outra forma poderíamos regredir outros seletores e ter problemas de sobreposição de propriedades.
 
-It's important to note that this is one of several techniques at our disposal. When a *thing* is well understood we can make use of other techniques, which we'll discuss in [Modules](/chapters/modules/), [State](/chapters/state/) and [Modifiers](/chapters/modifiers/).
+É importante notar que essa é apenas uma entre as várias técnicas à nossa disposição. Quando algo é bem entendido, nós podemos fazer uso de outras técnicas, que discutiremos em [Módulos](/capitulos/modulos/), [Estado](/capitulos/estados/) e [Modificadores](/capitulos/modificadores/).
 
-## What about mixins?
+## E sobre mixins?
 
-Mixins provide the best of both worlds. At least in theory.
+Mixins provêem o melhor dos dois mundos. Pelo menos em teoria.
 
-Like utility classes, updating a mixin propagates to all instances. If we don't have a handle of what's using the mixin, we increase the risk of regression. Instead of updating a mixin, we can create another, but this causes redundancy.
+Como classes de utilidade, a atualização de um mixin é propagada para todas as instâncias. Se não tivermos uma ideia do que está usando o mixin, aumentamos a chance de regressão. Ao invés de atualizar o mixin, podemos criar outro, mas isso causa redundância.
 
-Also, mixins easily end up with many rules, multiple parameters, and conditionality. This is complicated. Complicated is hard to maintain.
+Além do mais, mixins facilmente acabam com muitas propriedades, muitos parâmetros e condições. E isso é complicado. Complicado é difícil de preservar.
 
-To mitigate this complexity, we can create granular mixins, such as one for red text. At first this seems better. But isn't the declaration of a red mixin, the same as the rule itself i.e. `color: red`?
+Para mitigar essa complexidade, podemos criar mixins granulares, como um para textos em  vermelho. A princípio isso parece melhor. Mas a declaração de um mixin vermelho não é o mesmo que a regra `color: red`?
 
-If we need to update the rule in multiple places, a search and replace might be all that's necessary. Also, when the red *mixin* changes to *orange*, its name will need updating anyway.
+Se precisamos atualizar a regra em muitos lugares, buscar e substituir deve resolver o problema. Igualmente, quando o mixin *vermelho* mudar para *laranja*, o nome também vai precisar ser atualizado.
 
-With all that said, mixins can be very useful. We might, for example, want to apply *clearfix* rules across different elements and only within certain breakpoints. This is something that vanilla CSS can't do.
+Com isso dito, mixins podem ser muito úteis. Nós poderíamos, por exemplo, querer aplicar regras de *clearfix* através diferentes elementos e apenas em alguns break points. Isso é algo que o CSS Vanilla não consegue fazer.
 
-As such, mixins are not *bad*, we should use them, but use them judiciously.
+Assim sendo, mixins não são *ruins*, deveríamos usá-los, porém com moderação.
 
-## What about performance?
+## E sobre a performance?
 
-We overcomplicate matters when it comes to performance. We get obsessed with the smallest details.
+Nós complicamos as coisas além da conta quando o assunto é performance. Ficamos obcecados com os menores detalhes.
 
-Even if CSS totals more than 100kb, in the grand schemes of things, there's probably very little gain from mindlessly striving for DRYness. And as we've discussed making CSS small makes HTML big.
+Mesmo se o CSS totalize mais do que 100kb, no quadro geral, não vale à pena tentar enxugar o código apenas pelo DRY. E como discutimos antes, diminuir o CSS aumenta o HTML.
 
-The compression of a single image gives us a better return on our investment. And as we've discussed, resolving other forms of redundancy improves maintainability *and* performance.
+A compressão de uma imagem já nos dá um retorno melhor. E como já discutimos antes, resolver formas de redundância aumenta performance *e* sustentabilidade.
 
-## Is this violating DRY principles?
+## Estamos violando os princípios DRY?
 
-Attempting to reuse, for example `float: left`, is akin to trying to reuse variable names in different Javascript objects. It's simply not in violation of DRY.
+Tentar reutilizar, por exemplo, `float: left`, é semelhante a tentar reutilizar nomes de variáveis em objetos diferentes no Javascript. Não é violação dos princípios.
 
-## Final thought
+## Conclusão
 
-Striving for DRY leads to over-thought and over-engineered code. In doing so we make maintenance harder, not easier. Instead of obsessing over styles, we should focus on reusing tangible modules. Something we'll discuss in upcoming chapters.
+Se esforçar para não repetir leva a um código pensado e feito além da conta. Fazendo isso a manutenção complica, não melhora. Como alternativa, deveríamos focar em reutilizar módulos tangíveis. Vamos discutir isso nos próximos capítulos.

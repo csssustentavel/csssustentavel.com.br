@@ -1,7 +1,7 @@
 ---
 layout: chapter
 title: Semântica
-section: Visão Geral
+section: Fundamentos
 permalink: /capitulos/semantica/
 description: Porque nomear algo baseado no que ele é, ao invés de como é sua aparência e como é seu comportamento é a base de um CSS bem arquiteturado e sustentável.
 ---
