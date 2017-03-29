@@ -1,59 +1,59 @@
 ---
 layout: chapter
-title: Modifiers
-section: Core
-permalink: /chapters/modifiers/
-description: Use modifiers to change appearance based on slight differences.
+title: Modificadores
+section: Conceitos Principais
+permalink: /capitulos/modificadores/
+description: Use modificadores para mudar a aparência baseado em pequenas diferenças.
 ---
 
-Like state, modifiers also override styles. They are useful when modules (or components) have small and well understood differences.
+Como os estados, os modificadores também sobrescrevem estilos. São úteis quando módulos (ou componentes) têm diferenças pequenas e bem definidas.
 
-Take an e-commerce site whereby each category has a unique background image in the header. All headers have the same padding, and margin etc. The only difference is the background image.
+Pegue um site de e-commerce onde cada categoria tem uma imagem de fundo única no cabeçalho. Todos os cabeçalhos possuem o mesmo padding, margem etc. A única diferença é a imagem de fundo.
 
-The boys category would have a modifier as follows:
+A categoria “garotos” poderia ter um modificador como esse:
 
-	<div class="categoryHeader categoryHeader--boys">
+	<div class=”cabecalhoCategoria cabecalhoCategoria--garotos”>
 
-And similarly, the girls category would have a *girls* modifier:
+Similarmente, a categoria “garotas” teria um modificador *garotas*:
 
-	<div class="categoryHeader categoryHeader--girls">
+	<div class=”cabecalhoCategoria cabecalhoCategoria--garotas”>
 
-The CSS would be:
+O CSS seria:
 
-	.categoryHeader {
+	.cabecalhoCategoria {
 	  padding-top: 50px;
 	  padding-bottom: 50px;
 	  /* etc */
 	}
 
-	.categoryHeader--boys {
-	  background-image: url(/path/to/boys.jpg);
+	.cabecalhoCategoria--garotos {
+	  background-image: url(/caminho/para/garotos.jpg);
 	}
 
-	.categoryHeader--girls {
-	  background-image: url(/path/to/girls.jpg);
+	.cabecalhoCategoria--garotas {
+	  background-image: url(/caminho/para/garotas.jpg);
 	}
 
-Because the differences are small and well understood, this type of reuse is more maintainable.
+Por que as diferenças são pequenas e bem definidas, esse tipo de reutilização é mais sustentável.
 
-We can use the same approach for buttons. Most sites have a primary and secondary button style. If all that changes is one or two styles we can have a modifier for primary and secondary buttons as follows:
+Podemos usar a mesma abordagem para botões. A maioria dos sites têm um estilo de botão primário e secundário. Se tudo que muda são um ou dois estilos, podemos ter um modificador para os botões primários e secundários, desse jeito:
 
-	.button {
+	.botao {
 	  padding: 20px;
 	  border-radius: 3px;
 	  /* etc */
 	}
 
-	.button--primary {
+	.botao--primario {
 	  background-color: green;
 	}
 
-	.button--secondary {
+	.botao--secundario {
 	  background-color: #eee;
 	}
 
-Again, this only works because the differences are well contained and well understood.
+Novamente, isso só funciona porque as diferenças são bem contidas e bem definidas.
 
-## Final thought
+## Conclusão
 
-Modifiers are a good way to reuse styles across a well understood element. But, the modifier itself should be a tweak. If it contains a lot of overrides, then modifiers are not the way to go. Instead use a [module](/chapters/modules/).
+Modificadores são um bom jeito de reutilizar estilos através de um elemento bem compreendido. Mas, o modificador por si só deve ser apenas um detalhe. Se ele contém muitas regras sobrescritas, então muitos modificadores não são um bom caminho. Use um [módulo](/capitulos/modulos/) ao invés disso.
