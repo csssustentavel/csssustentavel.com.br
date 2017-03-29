@@ -6,23 +6,23 @@ permalink: /chapters/conventions/
 description: Learn the simple conventions that MaintainableCSS employs to write modules, components and state.
 ---
 
-*MaintainableCSS* has the following convention:
+*CSS Sustentável* segue as seguintes convenções:
 
-	.<module>[-<component>][-<state>] {}
+	.<módulo>[-<componente>][-<estado>] {}
 
-Square brackets are optional depending on the module in question. Here are some examples:
+Os itens nos colchetes são opcionais, dependendo do módulo em questão. Aqui estão alguns exemplos:
 
-	/* Module container */
-	.searchResults {}
+	/* Container do Módulo */
+	.resultadosBusca {}
 
-	/* Component */
-	.searchResults-heading {}
+	/* Componente */
+	.resultadosBusca-cabecalho {}
 
-	/* State */
-	.searchResults-isLoading {}
+	/* Estado */
+	.resultadosBusca-carregando {}
 
-Notes:
+Notas:
 
-- component and state are both delimited by a dash
-- names are written with lowerCamelCase
-- selectors are prefixed with the module name
+- componente e estado são delimitados por um hífen;
+- nomes são escritos em lowerCamelCase;
+- seletores são prefixados com o nome do módulo.
