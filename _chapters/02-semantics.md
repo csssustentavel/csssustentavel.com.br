@@ -36,9 +36,9 @@ Existem muitos benefícios em usar classes semânticas:
 
 Aqui está um snippet real de classes atômicas:
 
-	<div class=”pb3 pb4-ns pt4 pt5-ns mt4 preto-70 fl-l w-50-1”>
-		<h1 class=”f4 fw6 f1-ns lh-titulo medida mt0”>Título</h1>
-	<p class=”f5 f4-ns fw4 b medida dib-m lh-copy”>Parágrafo</p>
+	<div class="pb3 pb4-ns pt4 pt5-ns mt4 preto-70 fl-l w-50-1">
+		<h1 class="f4 fw6 f1-ns lh-titulo medida mt0">Título</h1>
+	<p class="f5 f4-ns fw4 b medida dib-m lh-copy">Parágrafo</p>
 	</div>
 
 Notas:
@@ -73,9 +73,9 @@ Imagine estar codificando um grid responsivo de duas colunas, onde:
 
 Geralmente, é feito assim usando classes utilitárias e visuais:
 
-	<div class=”grid clearfix”>
-		<div class=”col pd20 pd50 fs2 fs3”>Coluna 1</div>
-		<div class=”col pd20 pd50 fs2 fs3”>Coluna 2</div>
+	<div class="grid clearfix">
+		<div class="col pd20 pd50 fs2 fs3">Coluna 1</div>
+		<div class="col pd20 pd50 fs2 fs3">Coluna 2</div>
 	</div>
 
 Notas:
@@ -88,9 +88,9 @@ Mal começamos a avaliar este componente simples e já temos uma dor significati
 
 Aqui temos o mesmo usando classes semânticas:
 
-	<div class=”coisa”>
-		<div class=”coisa-coisa1”></div>
-		<div class=”coisa-coisa2”></div>
+	<div class="coisa">
+		<div class="coisa-coisa1"></div>
+		<div class="coisa-coisa2"></div>
 	</div>
 
 Notas:
@@ -152,7 +152,7 @@ Sobre usar o atributo classe, as especificações do HTML em 3.2.5.7 dizem o seg
 
 Considere o seguinte HTML:
 
-	<a class=”padding-esquerda-20 vermelho” href=”#”></a>
+	<a class="padding-esquerda-20 vermelho" href="#"></a>
 
 Mudar o padding e o colour do elemento no hover seria problemático. É melhor para evitar ter que consertar problemas auto-induzidos, como esse.
 
