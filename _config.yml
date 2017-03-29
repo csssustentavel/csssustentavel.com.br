@@ -1,6 +1,6 @@
 name: CSS Sustentável - uma abordagem para escrever CSS modular, escalável e sustentável | por Adam Silver
 markdown: kramdown
-url: http://maintainablecss.com
+url: http://csssustentavel.com.br
 include: ['_pages']
 collections:
   chapters:
