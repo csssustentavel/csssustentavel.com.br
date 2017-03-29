@@ -480,10 +480,6 @@ a.navigation-isActive {
 	margin-bottom: 10px;
 }
 
-.chapters ol {
-	color: #FF;
-}
-
 .chapters a,
 .chapters a:active,
 .chapters a:hover {
@@ -498,6 +494,7 @@ a.navigation-isActive {
 }
 
 .chapters ol {
+	color: #FFF;
 	margin-left: 20px;
 	font-size: 1.13em;
 	line-height: 1.7em;
