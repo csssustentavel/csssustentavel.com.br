@@ -480,10 +480,14 @@ a.navigation-isActive {
 	margin-bottom: 10px;
 }
 
+.chapters ol {
+	color: #FF;
+}
+
 .chapters a,
 .chapters a:active,
 .chapters a:hover {
-	color: #01B6AD;
+	color: #FFF;
 }
 
 @media(min-width: 37.5em) {
