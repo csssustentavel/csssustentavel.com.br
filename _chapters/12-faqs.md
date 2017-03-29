@@ -46,8 +46,8 @@ E o CSS:
 	/* módulo */
 	.carrinho {}
 
-/* componente de título para o módulo de carrinho */
-.carrinho .titulo {}
+	/* componente de título para o módulo de carrinho */
+	.carrinho .titulo {}
 
 Há dois problemas:
 
