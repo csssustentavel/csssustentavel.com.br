@@ -38,7 +38,7 @@ Aqui está um snippet real de classes atômicas:
 
 	<div class="pb3 pb4-ns pt4 pt5-ns mt4 preto-70 fl-l w-50-1">
 		<h1 class="f4 fw6 f1-ns lh-titulo medida mt0">Título</h1>
-	<p class="f5 f4-ns fw4 b medida dib-m lh-copy">Parágrafo</p>
+		<p class="f5 f4-ns fw4 b medida dib-m lh-copy">Parágrafo</p>
 	</div>
 
 Notas:
@@ -100,7 +100,7 @@ Notas:
 - As classes fazem sentido em telas pequenas e grandes.
 Podemos usar media queries para remover elementos apenas quando necessário.
 
-> Question: Pergunta: O quão valioso é um sistema de grids responsivo? O layout deveria se adaptar ao conteúdo, e não o contrário.
+> Pergunta: O quão valioso é um sistema de grids responsivo? O layout deveria se adaptar ao conteúdo, e não o contrário.
 
 ## 3. São mais fáceis de achar
 

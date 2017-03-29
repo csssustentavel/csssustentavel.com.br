@@ -7,6 +7,7 @@ description: Aprenda porque evitar reuso e abraçar a repetição faz a manuten�
 ---
 
 Como diria Harry Roberts, *DRY<sup>1</sup> é mal interpretado como a necessidade de nunca repetir a mesma coisa duas vezes. Isso não é prático e geralmente contraproducente, e pode levar a abstrações forçadas, gasto extra de energia e pensamento.*
+
 <sup>1</sup> *DRY - Don’t Repeat Yourself (não se repita)*
 
 Essa abstração forçada frequentemente resulta em classes atômicas e visuais. Nós sabemos quão dolorosas elas podem ser pois discutimos isso no capítulo de [Semântica](/capitulos/semantica/). Mixins também podem ser problemáticos, como veremos em breve.
@@ -26,7 +27,7 @@ Essa abordagem deveria ser usada por conveniência, não por performance. (Se a 
 
 Se um seletor se desvia das regras de dentro da abstração, ele deveria ser removido da lista. De outra forma poderíamos regredir outros seletores e ter problemas de sobreposição de propriedades.
 
-É importante notar que essa é apenas uma entre as várias técnicas à nossa disposição. Quando algo é bem entendido, nós podemos fazer uso de outras técnicas, que discutiremos em [Módulos](/capitulos/modulos/), [Estado](/capitulos/estados/) e [Modificadores](/capitulos/modificadores/).
+É importante notar que essa é apenas uma entre as várias técnicas à nossa disposição. Quando algo é bem entendido, nós podemos fazer uso de outras técnicas, que discutiremos em [Módulos](/capitulos/modulos/), [Estados](/capitulos/estados/) e [Modificadores](/capitulos/modificadores/).
 
 ## E sobre mixins?
 
