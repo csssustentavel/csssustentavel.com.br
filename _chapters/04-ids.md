@@ -1,54 +1,53 @@
 ---
 layout: chapter
 title: IDs
-section: Background
-permalink: /chapters/ids/
-description: Learn why using IDs as hooks for styling are problematic and what you should do instead.
+section: Fundamentos
+permalink: /caputulos/ids/
+description: Aprenda porque usar IDs como um gancho para estilo é problemático e o que você deve fazer no lugar.
 ---
 
-Semantically speaking, we should use an ID when there is only one instance of a thing. And we should use a class when there are several.
+Falando semanticamente, nós deveríamos usar a ID em um elemento que só apareça uma vez. E deveríamos usar classe quando aparecem várias vezes.
 
-However, [IDs overpower class names](http://www.w3.org/TR/css3-selectors/#specificity) by orders of magnitude, which is a problem when we want to override a style.
+Entretanto, as [IDs têm uma ordem de magnitude maior do que as classes](http://www.w3.org/TR/css3-selectors/#specificity), o que é se torna problemático quando queremos sobrescrever um estilo.
 
+Para demonstrar o problema, vamos sobrescrever a cor de um elemento de *vermelho* para *azul*, usando uma ID.
 
-To demonstrate the problem, let's override the colour of an element from *red* to *blue* using an ID.
+O HTML ficaria assim:
 
-Here's the HTML:
+	<div id="modulo" class="modulo-sobreposto">
 
-	<div id="module" class="module-override">
+E o CSS:
 
-And the CSS:
-
-	#module {
+	#modulo {
 	  color: red;
 	}
 
-	.module-override {
+	.modulo-sobreposto {
 	  color: blue;
 	}
 
-The element will be red even though the override class declares blue. Let's fix this by swapping the ID for a class:
+O elemento vai ser vermelho embora a classe de sobreposição declare azul. Vamos consertar isso trocando a ID por uma classe:
 
-	<div class="module module-override">
+	<div class="modulo modulo-sobreposto">
 
-And the CSS:
+E o CSS:
 
-	.module {
+	.modulo {
 	  color: red;
 	}
 
-	.module-override {
+	.modulo-sobreposto {
 	  color: blue;
 	}
 
-Now, the element is blue&mdash;problem solved.
+Agora o elemento está azul e o problema foi resolvido.
 
-Whilst using IDs for styling is problematic, we can still use them for other things. For example, we'll most certainly need to use them to:
+Enquanto usar IDs para estilos seja problemático, nós ainda podemos utilizá-las de outra forma. Por exemplo, nós certamente vamos usá-las para: 
 
-- link labels to form fields;
-- bind internal anchors to a hash fragment in the URL; and
-- connect various ARIA attributes to help screen reader users.
+- linkar labels com inputs;
+- ligar âncoras com o href; e
+- conectar os atributos ARIA, ajudando a leitura de telas.
 
-## Final thought
+## Conclusão
 
-Use IDs whenever you need to enable particular behaviours for browsers and assistive technology. But avoid using them as hooks for styles.
+Use IDs quando você queira ativar eventos comportamentais particulares para navegadores e para tecnologia de acessibilidade. Porém evite usá-las como ganchos para estilos.
