@@ -1,9 +1,9 @@
 ---
 layout: chapter
-title: Conventions
-section: Core
-permalink: /chapters/conventions/
-description: Learn the simple conventions that MaintainableCSS employs to write modules, components and state.
+title: Convenções
+section: Conceitos Principais
+permalink: /capitulos/convencoes/
+description: Aprenda a convenção simples que o CSS Sustentável emprega para escrever módulos, componentes e estados.
 ---
 
 *CSS Sustentável* segue as seguintes convenções:

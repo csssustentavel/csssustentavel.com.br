@@ -1,154 +1,152 @@
 ---
 layout: chapter
-title: Modules
-section: Core
-permalink: /chapters/modules/
-description: Learn the differences between modules and components and how to identify them within a design. We'll also code up some example modules together.
+title: Módulos
+section: Conceitos Principais
+permalink: /capitulos/modulos/
+description: Aprenda a diferença entre módulos e componentes e como identificar eles dentro de um projeto. Iremos codificar também alguns exemplos de módulos juntos.
 ---
 
-## What's a module?
+## O que é um módulo?
 
-A module is a distinct, independent unit, that can be combined with other modules to form a more complex structure.
+Um módulo é uma unidade distinta e independente, que pode ser combinada com outros módulos para formar uma estrutura mais complexa.
 
-In a living room, we can consider the TV, the sofa and the wall art modules. All coming together to create a useable room.
+Em uma sala de estar, podemos considerar a TV, o sofá e os quadros da parede como módulos. Todos unidos para criar uma sala utilizável.
 
-If we take one of the units away, the others still work. We don't need the TV to be able to sit on the sofa etc.
+Se nós retirarmos uma das unidades, as outras ainda funcionarão. Nós não precisamos da TV para poder sentar no sofá.
 
-In a website the header, registration form, shopping basket, article, product list, navigation and homepage promo can all be considered to be modules.
+Em um site, o cabeçalho, o formulário de registro, o carrinho de compras, um artigo, uma lista de produtos, o painel de navegação e página inicial podem ser considerados módulos.
 
-## What's a component?
+## O que é um componente?
 
-A module is made up of components. Without the components, the module is incomplete or broken.
+Um módulo é feito de componentes. Sem eles, o módulo fica incompleto ou inutilizado.
 
-For example a sofa is made up of the frame, upholstery, legs, cushions and back pillows, all of which are required components to allow the sofa to function as designed.
+Por exemplo: um sofá é feito de armações, estofado, pernas, almofadas e travesseiros do encosto, todos são componentes necessários para possibilitar que o sofá funcione como projetado.
 
-A logo *module* might consist of copy, an image and a link, each of which are components. Without the image the logo is broken, without the link the logo is incomplete.
+Um módulo *logotipo* pode consistir em uma marca de copyright, uma imagem e um link, cada qual um componente. Sem a imagem, o logotipo fica inutilizado, sem o link o logotipo fica incompleto.
 
-## Modules vs components
+## Módulos vs componentes
 
-Sometimes it's hard to decide whether something should be a component or a module. For example, we might have a header containing a logo and a menu. Are these components or modules?
+Algumas vezes é difícil de decidir quando algo deve ser um componente ou um módulo. Por exemplo, podemos ter um cabeçalho contendo uma logo e um menu. Estes são componentes ou módulos?
 
-In a recent project it made most sense for the logo to be a component and the menu to be a module of its own. What's a header without logo? And the navigation might be moved below the header.
+Em um projeto recente, fez mais sentido que a logo fosse um componente e o menu um módulo. O que seria de um cabeçalho sem uma logo? E o painel de navegação poderia ser movido para baixo do cabeçalho.
 
-Nobody understands your requirements as well as you do. Through experience you'll get a feel for it. And if you get it wrong, changing from a component to a module is easy.
+Ninguém entende suas necessidades melhor do que você mesmo. Através da experiência, você vai pegar a prática para isso. E se você fizer errado, é fácil transformar um componente em um módulo.
 
-That's enough theory. Let's build three different modules together. In doing so, the hope is to cover most of the things we think about when writing CSS.
+Já temos teoria o suficiente. Vamos construir três diferentes módulos juntos. Fazendo isso, espero cobrir a maior parte das coisas que pensamos quando escrevemos CSS.
 
-## 1. Creating a basket module
+## 1. Criando um módulo de carrinho de compras
 
-We'll simplify this basket for brevity. Each product within the basket will display the product's title with the ability to remove it from the basket.
+Nós vamos simplificar esse carrinho de compras por enquanto. Cada produto dentro do carrinho de compras vai mostrar seu título, com a possibilidade de remover ele da lista.
 
-The basket template might be:
+O modelo do carrinho de compras pode ser:
 
-	<div class="basket">
-	  <h1 class="basket-title">Your basket</h1>
-	  <div class="basket-item">
-	      <h3 class="basket-productTitle">Product title</h3>
-          <form>
-              <input type="submit" class="basket-removeButton" value="Remove">
-	      </form>
+	<div class=”carrinho”>
+	  <h1 class=”carrinho-titulo”>Seu carrinho</h1>
+	  <div class=”carrinho-item”>
+	    <h3 class=”carrinho-tituloProduto”>Título do produto</h3>
+	    <form>
+	      <input type=”submit” class=”carrinho-botaoRemover” value=”Remover”>
+	    </form>
 	  </div>
 	</div>
 
-And the CSS would be:
+E o CSS pode ser:
 
-	.basket {}
-	.basket-title {}
-	.basket-item {}
-	.basket-productTitle {}
-	.basket-removeButton {}
+	.carrinho {}
+	.carrinho-titulo {}
+	.carrinho-item {}
+	.carrinho-tituloProduto {}
+	.carrinho-botaoRemover {}
 
-## 2. Creating an order summary module
+## 2. Criando um módulo de resumo de pedido
 
-Next, we will build an order summary module. This module is shown during checkout and bears some resemblance to the basket. For example, it has a title and it displays a list of products.
+Em seguida, iremos construir um módulo de resumo de pedido. Esse módulo é mostrado durante o pagamento e tem alguma semelhança com o carrinho de compras. Por exemplo, ele tem um título e mostra uma lista de produtos.
 
-It does, however, have a different aesthetic and the products can no longer be removed i.e. no form and no remove button.
+Ele, Contudo, tem uma estética diferente, e os produtos não podem mais ser removidos, ou seja, não haverá o formulário nem o botão de remoção.
 
-The first thing to address is the temptation to reuse the basket template (and CSS). Even though there are similarities, this does not mean they are the same.
+A primeira coisa para abordarmos é a tentação de reutilizar o modelo do carrinho de compras (e o CSS). Mesmo havendo semelhanças, isso não significa que são a mesma coisa.
 
-If we try to combine them we'll entangle two modules with display logic and CSS overrides. This entangling by definition is complex which in turn is hard to maintain and easily avoidable.
+Se tentarmos combinar eles, vamos emaranhar dois módulos com lógicas de display e sobrescritas de CSS. Esse emaranhamento é, por definição, complexo, o que o torna difícil de sustentar e é facilmente evitável.
 
-Instead, we should create a new module with the following template:
+Ao invés disso, nós devemos criar um novo módulo com o seguinte modelo:
 
-	<div class="orderSummary">
-	  <h2 class="orderSummary-title">Order summary</h2>
-	  <div class="orderSummary-item">...</div>
-	  <div class="orderSummary-item">...</div>
+	<div class=”resumoPedido”>
+	  <h2 class=”resumoPedido-titulo”>Resumo do pedido</h2>
+	  <div class=”resumoPedido-item”>...</div>
+	  <div class=”resumoPedido-item”>...</div>
 	</div>
 
-And the CSS would be:
+E o CSS seria:
 
-	.orderSummary {}
-	.orderSummary-title {}
-	.orderSummary-item {}
+	.resumoPedido {}
+	.resumoPedido-titulo {}
+	.resumoPedido-item {}
 
-As counterintuitive as this may seem, duplication is a better prospect. And, this is not really duplication. Duplication is copying the *same* thing. These two modules might look similar but they are not the same.
+Muito embora pareça não intuitivo, duplicação é uma melhor abordagem. E, isso não é realmente duplicação. Duplicação é copiar a *mesma* coisa. Esses dois módulos podem parecer similares, mas não são a mesma coisa.
 
-Keeping things separate, keeps things simple. Simple is the most important aspect of building reliable, scalable and maintainable software.
+Manter as coisas separadas, mantém as coisas simples. Simplicidade é o mais importante aspecto quando se constrói um software confiável, escalável e sustentável.
 
-## 3. Creating a button module
+## 3. Criando um módulo de botão
 
-As our basket module only appears in the basket page, we didn't consider being able to reuse it elsewhere. Also, we didn't address the fact that the remove button is a component of the basket, making it harder to reuse across modules.
+Como nosso módulo de carrinho de compras aparece apenas em sua própria página, não consideramos a possibilidade de reutilizar isso em nenhum outro lugar. Também não abordamos o fato de que o botão de remoção é um componente do carrinho de compras, fazendo isso ser difícil de reutilizar entre os módulos.
 
-Buttons are an example of something that we want to reuse in lots of places, and potentially *within* different modules. (A button is not particularly useful on its own.)
+Botões são um exemplo de algo que queremos reutilizar em muitos lugares, e potencialmente *dentro* de módulos diferentes (um botão não é particularmente útil sozinho).
 
-One option would be to upgrade the button component into a module as follows:
+Uma opção seria transformar o componente de botão em um módulo, desse jeito:
 
-	<input class="button" type="submit" value="{%raw%}{{text}}{%endraw%}">
+	<input class=”botao” type=”submit” value=”{{texto}}”>
 
-And the the CSS would be:
+E o CSS poderia ser:
 
-	.button {}
+	.botao {}
 
-The problem is that buttons often have slightly different positioning, sizing and spacing depending on context. And of course there are media queries to consider.
+O problema é que botões frequentemente têm diferentes posicionamentos, tamanhos e espaçamento, dependendo do contexto. E, claro, temos media queries para considerar.
 
-For example, within one module a button might be floated to the right next to some text. In another it might be centered with some text beneath with some bottom margin.
+Por exemplo, dentro de um módulo um botão poderia ser flutuado para a direita, próximo a algum texto. Em outro poderia ser centralizado com algum texto abaixo e alguma margem inferior.
 
-Ideally, we should iron out these inconsistencies in *design*, before they even make their way into code. But as this is not always possible and for the purposes of example, we'll assume we have to deal with these issues.
+Idealmente, deveríamos resolver essas inconsistências no *design*, antes mesmo de serem codificadas. Mas como isso nem sempre é possível, e por motivos de exemplo, assumiremos que temos que lidar com essas questões.
 
-And so, because of these differences, it's tricky to abstract the common rules because we don't want to end up in override hell. Or worse that we're afraid to update the abstracted CSS rules.
+Então, por causa dessas diferenças, é difícil abstrair as regras comuns, pois não queremos acabar com um inferno de sobrescritas. Ou pior ainda, que fiquemos com medo de modificar as regras de CSS já abstraídas.
 
-To avoid these problems, we can use a mixin or comma-delimit the common rules that aren't affected by their context. For example:
+Para evitar esses problemas, podemos usar um mixin ou delimitar por vírgula as regras que não são afetadas pelo contexto. Por exemplo:
 
-	.basket-removeButton,
-	.another-loginButton,
-	.another-deleteButton {
-      background-color: green;
-      padding: 10px;
-      color: #fff;
+	.carrinho-botaoRemover,
+	.outro-botaoLogin,
+	.outro-botaoExcluir {
+	  background-color: green;
+	  padding: 10px;
+	  color: #fff;
 	}
 
-Notice that in this example, we don't specify `float`, `margin` or `width` etc. Those styles are applied to the unique button:
+Note que nesse exemplo, não especificamos `float`, `margin` ou `width` etc. Esses estilos são aplicados ao botão apenas:
 
-	.basket-removeButton {
+	.carrinho-botaoRemover {
 	  float: right;
 	}
-
-	.another-deleteButton {
+	.outro-botaoExcluir {
 	  margin-bottom: 10px;
 	}
 
-This seems sensible as it means we can opt in to these common styles. The opposite, of course being having to override. But there's another, third option.
+Isso parece sensato, pois podemos optar por usar esses estilos comuns. Do contrário, teríamos que sobrescrever. Mas há uma terceira opção.
 
-Imagine a checkout flow whereby each page has a continue button and a link to the previous step. We can reuse this by upgrading it into a module:
+Imagine as etapas de um pagamento, onde cada página tem um botão de continuar e um link para a etapa anterior. Podemos reutilizá-lo atualizando-o em um módulo:
 
-	<div class="checkoutActions">
-	  <input class="checkoutActions-continue">
-	  <a class="checkoutActions-back"></a>
+	<div class=”acoesPagamento”>
+	  <input class=”acoesPagamento-continuar”>
+	  <a class=”acoesPagamento-voltar”></a>
 	</div>
 
-And the CSS would be:
+E o CSS seria:
 
-	.checkoutActions-continue { }
+	.acoesPagamento-continuar {}
+	.acoesPagemento-voltar {}
 
-	.checkoutActions-back { }
+Fazendo isso, abstraímos e aplicamos os estilos para o módulo ´.acoesPagamento`, que é fácil de entender. E também fizemos isso sem afetar botões parecidos, mas não idênticos.
 
-In doing this, we abstracted and applied the styles to a well understood `.checkoutActions` module. And we've done this without affecting similar, but not identical buttons.
+Não discutimos ainda sobre ter mais de um tipo de botão (primário e secundário, etc). Para fazer isso, podemos usar modificadores, que será abordado depois.
 
-We haven't discussed having more than one type of button (primary and secondary etc) yet. To do this we can use modifiers, which is addressed later.
+## Conclusão
 
-## Final thought
+Um módulo, por definição, é um parte reutilizável de HTML e CSS. Antes de um grupo de elementos poder ser transformado em um módulo, devemos primeiro entender o que é e quais seus diferentes casos de uso.
 
-A module, by definition, is a reusable chunk of HTML and CSS. Before a group of elements can be upgraded into a module, we must first understand what it is and what its different use cases are.
-
-Only then, can we design the right abstraction. And in doing so, we avoid complexity at the same time, which is the source of unmaintainable CSS.
+Só então, podemos projetar a abstração correta. E fazendo isso, evitamos complexidade ao mesmo tempo, que é a fonte de um CSS não sustentável.
