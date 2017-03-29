@@ -40,12 +40,12 @@ Nós vamos simplificar esse carrinho de compras por enquanto. Cada produto dentr
 
 O modelo do carrinho de compras pode ser:
 
-	<div class=”carrinho”>
-	  <h1 class=”carrinho-titulo”>Seu carrinho</h1>
-	  <div class=”carrinho-item”>
-	    <h3 class=”carrinho-tituloProduto”>Título do produto</h3>
+	<div class="carrinho">
+	  <h1 class="carrinho-titulo">Seu carrinho</h1>
+	  <div class="carrinho-item">
+	    <h3 class="carrinho-tituloProduto">Título do produto</h3>
 	    <form>
-	      <input type=”submit” class=”carrinho-botaoRemover” value=”Remover”>
+	      <input type="submit" class="carrinho-botaoRemover" value="Remover">
 	    </form>
 	  </div>
 	</div>
@@ -70,10 +70,10 @@ Se tentarmos combinar eles, vamos emaranhar dois módulos com lógicas de displa
 
 Ao invés disso, nós devemos criar um novo módulo com o seguinte modelo:
 
-	<div class=”resumoPedido”>
-	  <h2 class=”resumoPedido-titulo”>Resumo do pedido</h2>
-	  <div class=”resumoPedido-item”>...</div>
-	  <div class=”resumoPedido-item”>...</div>
+	<div class="resumoPedido">
+	  <h2 class="resumoPedido-titulo">Resumo do pedido</h2>
+	  <div class="resumoPedido-item">...</div>
+	  <div class="resumoPedido-item">...</div>
 	</div>
 
 E o CSS seria:
@@ -94,7 +94,7 @@ Botões são um exemplo de algo que queremos reutilizar em muitos lugares, e pot
 
 Uma opção seria transformar o componente de botão em um módulo, desse jeito:
 
-	<input class=”botao” type=”submit” value=”{{texto}}”>
+	<input class="botao" type="submit" value="{{texto}}">
 
 E o CSS poderia ser:
 
@@ -131,9 +131,9 @@ Isso parece sensato, pois podemos optar por usar esses estilos comuns. Do contr�
 
 Imagine as etapas de um pagamento, onde cada página tem um botão de continuar e um link para a etapa anterior. Podemos reutilizá-lo atualizando-o em um módulo:
 
-	<div class=”acoesPagamento”>
-	  <input class=”acoesPagamento-continuar”>
-	  <a class=”acoesPagamento-voltar”></a>
+	<div class="acoesPagamento">
+	  <input class="acoesPagamento-continuar">
+	  <a class="acoesPagamento-voltar"></a>
 	</div>
 
 E o CSS seria:

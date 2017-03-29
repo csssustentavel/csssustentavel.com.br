@@ -1,42 +1,42 @@
 ---
 layout: chapter
-title: State
-section: Core
-permalink: /chapters/state/
-description: Learn how to provide different styles to your modules and components based on state, such as showing, hiding and loading.
+title: Estados
+section: Conceitos Principais
+permalink: /capitulos/estados/
+description: Aprenda como prover diferentes estilos para seus módulos e componentes baseado em estados, como visível, escondido e carregando.
 ---
 
-Quite often, particularly with richer user interfaces, styling needs to be applied in response to an element's change of state. For example, we may have different styles when a module (or component) is:
+Com frequência, particularmente com interfaces ricas, estilos precisam ser aplicados em resposta à uma mudança de estado de um elemento. Por exemplo, podemos ter diferentes estilos quando um módulo (ou componente) está:
 
-- showing or hiding;
-- active or inactive;
-- disabled or enabled;
-- loading or loaded;
-- hasProducts or hasNoProducts;
-- isEmpty or isFull;
+- visível ou invisível;
+- ativo ou inativo;
+- habilitado ou desabilitado;
+- carregando ou carregado;
+- temProdutos ou semProdutos;
+- vazio ou cheio.
 
-To represent state we need an additional class which should be added to the module (or component) element to which it pertains. For example, if our basket module needs a gray background when it's empty, the HTML should be:
+Para representar estados precisamos de uma classe adicional, que deve ser adicionada ao elemento do módulo (ou componente) ao qual pertence. Por exemplo, se nosso módulo de carrinho de compras precisa de um fundo cinza quando está vazio, o HTML deveria ser:
 
-	<div class="basket basket-isEmpty">
+	<div class="carrinho carrinho-vazio">
 
-And the CSS should be:
+E o CSS seria:
 
-	.basket-isEmpty {
-      background-color: #eee;
+	.carrinho-vazio {
+	  background-color: #eee;
 	}
 
-The class name is prefixed with the module (or component) because whilst states might be common, associated styles might not. For example, an empty *basket* has a gray background, where as an empty search has an absolutely-positioned image.
+O nome da classe é prefixado com o módulo (ou componente) porque enquanto estados podem ser comuns, estilos associados podem não ser. Por exemplo, um *carrinho* vazio tem um fundo cinza, enquanto uma pesquisa sem resultados têm uma imagem posicionada absolutamente.
 
-## What about reusing state?
+## E para reutilizar estados?
 
-Sometimes, we may in fact want to reuse state across modules or components. For example, toggling an element's visibility. This is discussed in more detail in the chapter entitled [Javascript](/chapters/javascript/).
+Algumas vezes, podemos de fato querer reutilizar estados entre módulos ou componentes. Por exemplo, alternando a visibilidade de um elemento. Isso será discutido mais detalhadamente no capítulo intitulado [Javascript](/capitulos/javascript/).
 
-## What about ARIA attributes?
+## E os atributos ARIA?
 
-Not all visual states can be represented by an [ARIA attribute](https://www.w3.org/TR/wai-aria/states_and_properties#attrs_widgets). For example, there is no attribute to represent `hasProducts`. Therefore, we should use them only when necessary and in *addition* to classes.
+Nem todos os estados visuais podem ser representados por um [atributo ARIA](https://www.w3.org/TR/wai-aria/states_and_properties#attrs_widgets). Por exemplo, não há atributo para representar `temProdutos`. Portanto, devemos usar eles apenas quando necessário, em adição às classes.
 
-Also, using an attribute (instead of a class) selector has [less support](https://www.impressivewebs.com/attribute-selectors/). Whilst developers may consider these browsers old, insecure or irrelevant, we should avoid techniques that may exclude users.
+Também, usar um seletor de atributo (ao invés de uma classe) possui [menos suporte](https://www.impressivewebs.com/attribute-selectors/). Enquanto alguns desenvolvedores podem considerar esses navegadores velhos, inseguros ou irrelevantes, deveríamos evitar técnicas que possam excluir usuários.
 
-## Final thought
+## Conclusão
 
-If an element's style needs changing based on its state, we should add an extra class to apply the differences. When necessary, use ARIA attributes for assistive technology, not for styling. In doing so we employ a consistent and inclusive approach to styling.
+Se o estilo de um elemento precisa mudar baseado em seu estado, devemos adicionar uma classe extra para aplicar as diferenças. Quando necessário, use atributos ARIA para tecnologias assistivas, não para estilizar. Fazendo isso empregamos uma abordagem consistente e inclusiva de estilização.
