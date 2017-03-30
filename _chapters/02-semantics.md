@@ -154,7 +154,7 @@ Considere o seguinte HTML:
 
 	<a class="padding-esquerda-20 vermelho" href="#"></a>
 
-Mudar o padding e o colour do elemento no hover seria problemático. É melhor para evitar ter que consertar problemas auto-induzidos, como esse.
+Mudar o padding e o color do elemento no hover seria problemático. É melhor para evitar ter que consertar problemas auto-induzidos, como esse.
 
 ## 12. Eles deixam um rastro menor no HTML
 
