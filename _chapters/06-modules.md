@@ -139,7 +139,7 @@ Imagine as etapas de um pagamento, onde cada página tem um botão de continuar 
 E o CSS seria:
 
 	.acoesPagamento-continuar {}
-	.acoesPagemento-voltar {}
+	.acoesPagamento-voltar {}
 
 Fazendo isso, abstraímos e aplicamos os estilos para o módulo ´.acoesPagamento`, que é fácil de entender. E também fizemos isso sem afetar botões parecidos, mas não idênticos.
 
