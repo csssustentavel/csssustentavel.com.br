@@ -16,11 +16,11 @@ Há duas abordagens que podemos tomar, ambas complementando a abordagem CSS que 
 
 Para fazer isso, precisamos especificar uma classe de estado específico de módulo ao construtor da seguinte forma:
 
-	var modulo1Recolhedor = novo Recolhedor(elemento1, {
+	var modulo1Recolhedor = new Recolhedor(elemento1, {
 		cssClasseEscondido: 'moduloA-escondido' 
 	});
 
-	var modulo2Recolhedor = novo Recolhedor(elemento2, {
+	var modulo2Recolhedor = new Recolhedor(elemento2, {
 		cssClasseEscondido: 'moduloB-escondido' 
 	});
 
@@ -43,8 +43,8 @@ Se nos encontrarmos repetindo exatamente o mesmo conjunto de estilos para múlti
 
 Esta abordagem elimina a longa lista delimitada por vírgula. E não precisamos mais especificar a classe do módulo ao criar uma instância. Isto ocorre porque a classe global será referenciada internamente.
 
-	var modulo1Recolhedor = novo Recolhedor(elemento1);
-	var modulo2Recolhedor = novo Recolhedor(elemento2);
+	var modulo1Recolhedor = new Recolhedor(elemento1);
+	var modulo2Recolhedor = new Recolhedor(elemento2);
 
 Porém, essa abordagem nem sempre faz sentido. Podemos ter dois módulos diferentes que se comportam da mesma forma, mas têm um aparência diferente, o qual é algo que discutimos em [Estados](/capitulos/estados/).
 
