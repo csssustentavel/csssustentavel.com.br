@@ -8,7 +8,7 @@ description: Aprenda porque usar IDs como um gancho para estilo é problemático
 
 Falando semanticamente, nós deveríamos usar a ID em um elemento que só apareça uma vez. E deveríamos usar classe quando aparecem várias vezes.
 
-Entretanto, as [IDs têm uma ordem de magnitude maior do que as classes](http://www.w3.org/TR/css3-selectors/#specificity), o que é se torna problemático quando queremos sobrescrever um estilo.
+Entretanto, as [IDs têm uma ordem de magnitude maior do que as classes](http://www.w3.org/TR/css3-selectors/#specificity), o que se torna problemático quando queremos sobrescrever um estilo.
 
 Para demonstrar o problema, vamos sobrescrever a cor de um elemento de *vermelho* para *azul*, usando uma ID.
 
