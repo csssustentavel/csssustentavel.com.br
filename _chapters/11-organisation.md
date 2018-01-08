@@ -44,7 +44,7 @@ Esta abordagem coloca os CSS específicos de módulos em seus próprios diretór
 			carrinho.html
 			carrinhoVazio.html
 		/partials
-			cabecalhoCarrino.html
+			cabecalhoCarrinho.html
 			resumoCarrinho.html
 		/js
 			...
